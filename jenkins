@@ -17,12 +17,14 @@ pipeline {
             }  
         }
          stage('Deploy Website') {
-            steps(
+            steps{
                 script{
 
                     dockerImage.run("-p 8080:80 --name your-container-name -d")
                 }
             }
-        }
-    }
 }
+}
+}
+
+
